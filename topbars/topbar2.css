@@ -1,0 +1,60 @@
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+}
+
+.topbar {
+  width: 80%;
+  background-color: lightgray;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ccc, 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  margin: auto;
+}
+
+.topbar-left .logo {
+  height: 40px;
+}
+
+.topbar-center {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.likes-label {
+  font-size: 16px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  stroke: red;
+  stroke-width: 2px;
+  transition: fill 0.3s ease;
+}
+
+.like-button.liked .heart-icon {
+  fill: red;
+}
+

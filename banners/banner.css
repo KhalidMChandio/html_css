@@ -1,0 +1,87 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Full viewport height for dramatic effect */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image fills the container */
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.6s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-container{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+}
+.banner-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.banner-text {
+    font-size: 1.2rem;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.banner-button {
+    background-color: #007bff;
+    width: 100px;   
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.banner-button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
