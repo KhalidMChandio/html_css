@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="a.css">
+    
+</head>
+<body>
+    <div class="main-container">
+  <div class="image-viewer">
+    <div class="zoom-image" id="zoomImage"></div>
+  </div>
+
+  <div class="thumbnail-carousel">
+    <button class="nav-button left" onclick="scrollThumbnails(-1)">‹</button>
+    <div class="thumbnails" id="thumbnails">
+      <!-- Add your thumbnail images here -->
+      <img src="a.webp" onclick="changeMainImage(this.src)" />
+      <img src="a.webp" onclick="changeMainImage(this.src)" />
+      <img src="a.webp" onclick="changeMainImage(this.src)" />
+      <!-- Add more as needed -->
+    </div>
+    <button class="nav-button right" onclick="scrollThumbnails(1)">›</button>
+  </div>
+</div>
+<script src="a.js"></script>
+</body>
+</html>
