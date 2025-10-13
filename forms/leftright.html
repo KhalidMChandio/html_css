@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="leftright.css">
+    <link rel="stylesheet" href="inputs_light.css">
+    <link rel="stylesheet" href="a.css">
+</head>
+
+<body>
+    <div class="top-container">
+        <div class="main-container">
+            <div class="image-viewer">
+                <div class="zoom-image" id="zoomImage"></div>
+            </div>
+
+            <div class="thumbnail-carousel">
+                <button class="nav-button left" onclick="scrollThumbnails(-1)">‹</button>
+                <div class="thumbnails" id="thumbnails">
+                    <!-- Add your thumbnail images here -->
+                    <img src="a.webp" onclick="changeMainImage(this.src)" />
+                    <img src="a.webp" onclick="changeMainImage(this.src)" />
+                    <img src="a.webp" onclick="changeMainImage(this.src)" />
+                    <!-- Add more as needed -->
+                </div>
+                <button class="nav-button right" onclick="scrollThumbnails(1)">›</button>
+            </div>
+        </div>
+        <script src="a.js"></script>
+        <div class="right-form">
+            <h2>Product Name</h2>
+            <p>The product is great. it is made of a high quality lawn. specially designed by professinals to fit and
+                look beautiful.</p>
+            <div class="price-container">
+                <div class="new-price">
+                    Rs.2000/-
+                </div>
+                <div class="old-price">
+                    Rs.3000/-
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body{
+    box-sizing: border-box;
+}
+
+.top-container{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid orange;
+    margin: auto;
+    padding: 50px;    
+}
+.left-img{
+    width: 50%;
+    height: auto;
+}
+.right-form{
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.price-container{
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    
+}
+.new-price{
+    display: block;
+    text-align: left;
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}
+.old-price{
+    width: 50%;
+    display: block;
+    text-align: left;
+    text-decoration:line-through;
+}

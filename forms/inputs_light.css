@@ -1,0 +1,113 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* Headings and Paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  color: #004080;
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Form Container */
+form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #004080;
+}
+
+/* Inputs, Textareas, Selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff6600;
+  outline: none;
+}
+
+/* Checkboxes and Radios */
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="reset"] {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #e65c00;
+}
+
+/* Secondary Button */
+.button-secondary {
+  background-color: #004080;
+}
+
+.button-secondary:hover {
+  background-color: #003366;
+}
+
+/* File Input Styling */
+input[type="file"] {
+  padding: 0.5rem;
+  background-color: #eef;
+  border: 1px dashed #004080;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-left-container">
+            <h3 class="cart-item">My Cart</h3>
+            <div class="cart-item">
+                <img src="a.webp" class="cart-item-image">
+                <div class="cart-item-details">
+                    <div class="cart-item-name">
+                        Mogra Hyluronic Acid Serum
+                    </div>
+                    <div class="cart-item-price-container">
+                        <div class="cart-item-price">
+                            Rs. 600.00
+                        </div>
+                        <div class="cart-item-discounted-price">
+                            Rs. 500.00
+                        </div>
+                    </div>
+                </div>
+                <div class="number-input-wrapper">
+                    <button class="decrement">−</button>
+                    <input type="number" class="number-input" value="0" min="0" />
+                    <button class="increment">+</button>
+                </div>
+                <div class="cart-total-price">
+                    Rs. 600.00/-
+                </div>
+                <div class="cart-delete-button">
+                    h
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector('.number-input');
+        document.querySelector('.decrement').addEventListener('click', () => {
+        if (input.value > 0) input.stepDown();
+        });
+
+        document.querySelector('.increment').addEventListener('click', () => {
+        input.stepUp();
+        });
+
+
+    </script>
+</body>
+</html>
