@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #0077cc;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .submenu {
+      display: none;
+      margin-left: 15px;
+    }
+
+    .submenu li {
+      margin: 6px 0;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .main-heading {
+      font-size: 30px;
+      color: #222;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .topic-heading {
+      font-size: 22px;
+      color: #2a2a2a;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    .sub-heading {
+      font-size: 18px;
+      color: #555;
+      font-weight: 500;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3>Help Topics</h3>
+    <ul>
+      <li>
+        <a class="accordion-toggle">Getting Started</a>
+        <ul class="submenu">
+          <li><a href="#getting-started">Platform Overview</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="accordion-toggle">Account Management</a>
+        <ul class="submenu">
+          <li><a href="#create-account">Creating an Account</a></li>
+          <li><a href="#reset-password">Resetting Your Password</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="accordion-toggle">Order Management</a>
+        <ul class="submenu">
+          <li><a href="#track-order">Tracking Your Order</a></li>
+          <li><a href="#cancel-order">Cancelling an Order</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1 class="main-heading">Welcome to the Help Center</h1>
+
+    <h2 class="topic-heading" id="getting-started">Getting Started</h2>
+    <h3 class="sub-heading">Platform Overview</h3>
+    <p>Welcome to our Help Center. This guide provides a comprehensive introduction to navigating and utilizing our platform effectively.</p>
+
+    <h2 class="topic-heading" id="account">Account Management</h2>
+    <h3 class="sub-heading" id="create-account">Creating an Account</h3>
+    <p>To register, click the <strong>Sign Up</strong> button and complete the form with accurate personal details. A confirmation email will be sent to verify your account.</p>
+
+    <h3 class="sub-heading" id="reset-password">Resetting Your Password</h3>
+    <p>If you've forgotten your password, select <strong>Forgot Password</strong> on the login screen. Follow the instructions in the email to securely reset your credentials.</p>
+
+    <h2 class="topic-heading" id="orders">Order Management</h2>
+    <h3 class="sub-heading" id="track-order">Tracking Your Order</h3>
+    <p>Visit the <strong>Orders</strong> section in your dashboard to view real-time updates on your purchase, including shipping status and estimated delivery.</p>
+
+    <h3 class="sub-heading" id="cancel-order">Cancelling an Order</h3>
+    <p>To cancel an order, navigate to your order history and click <strong>Cancel</strong> next to the relevant item. Please note that cancellations are subject to our policy.</p>
+  </div>
+
+  <script>
+    const toggles = document.querySelectorAll('.accordion-toggle');
+    const submenus = document.querySelectorAll('.submenu');
+
+    toggles.forEach((toggle, index) => {
+      toggle.addEventListener('click', () => {
+        submenus.forEach((submenu, i) => {
+          submenu.style.display = i === index && submenu.style.display !== 'block' ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

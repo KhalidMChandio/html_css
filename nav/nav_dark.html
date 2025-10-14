@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navigation Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .menu a,
+    .cart a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover,
+    .cart a:hover {
+      background-color: #575757;
+      border-radius: 4px;
+    }
+
+    .cart {
+      white-space: nowrap;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+      }
+
+      .cart {
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="cart">
+      <a href="/cart">Cart</a>
+    </div>
+  </nav>
+</body>
+</html>

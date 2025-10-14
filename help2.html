@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #0077cc;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .submenu {
+      display: none;
+      margin-left: 15px;
+      transition: max-height 0.3s ease;
+    }
+
+    .submenu li {
+      margin: 6px 0;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .main-heading {
+  font-size: 30px;
+  color: #005fa3; /* Deep blue for authority */
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.topic-heading {
+  font-size: 22px;
+  color: #0077cc; /* Brighter blue for section titles */
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.sub-heading {
+  font-size: 18px;
+  color: #009688; /* Teal for subtopics */
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+}
+
+
+    .search-bar {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3>Help Topics</h3>
+    <ul>
+      <li>
+        <a class="accordion-toggle">Getting Started <i class="fas fa-chevron-down"></i></a>
+        <ul class="submenu">
+          <li><a href="#getting-started">Platform Overview</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="accordion-toggle">Account Management <i class="fas fa-chevron-down"></i></a>
+        <ul class="submenu">
+          <li><a href="#create-account">Creating an Account</a></li>
+          <li><a href="#reset-password">Resetting Your Password</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="accordion-toggle">Order Management <i class="fas fa-chevron-down"></i></a>
+        <ul class="submenu">
+          <li><a href="#track-order">Tracking Your Order</a></li>
+          <li><a href="#cancel-order">Cancelling an Order</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1 class="main-heading">Welcome to the Help Center</h1>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search help topics..." />
+    </div>
+
+    <h2 class="topic-heading" id="getting-started">Getting Started</h2>
+    <h3 class="sub-heading">Platform Overview</h3>
+    <p>Welcome to our Help Center. This guide provides a comprehensive introduction to navigating and utilizing our platform effectively.</p>
+
+    <h2 class="topic-heading" id="account">Account Management</h2>
+    <h3 class="sub-heading" id="create-account">Creating an Account</h3>
+    <p>To register, click the <strong>Sign Up</strong> button and complete the form with accurate personal details. A confirmation email will be sent to verify your account.</p>
+
+    <h3 class="sub-heading" id="reset-password">Resetting Your Password</h3>
+    <p>If you've forgotten your password, select <strong>Forgot Password</strong> on the login screen. Follow the instructions in the email to securely reset your credentials.</p>
+
+    <h2 class="topic-heading" id="orders">Order Management</h2>
+    <h3 class="sub-heading" id="track-order">Tracking Your Order</h3>
+    <p>Visit the <strong>Orders</strong> section in your dashboard to view real-time updates on your purchase, including shipping status and estimated delivery.</p>
+
+    <h3 class="sub-heading" id="cancel-order">Cancelling an Order</h3>
+    <p>To cancel an order, navigate to your order history and click <strong>Cancel</strong> next to the relevant item. Please note that cancellations are subject to our policy.</p>
+  </div>
+
+<script>
+  // Accordion logic
+  const toggles = document.querySelectorAll('.accordion-toggle');
+  const submenus = document.querySelectorAll('.submenu');
+
+  toggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+      submenus.forEach((submenu, i) => {
+        submenu.style.display = i === index && submenu.style.display !== 'block' ? 'block' : 'none';
+      });
+
+      toggles.forEach((t, i) => {
+        const icon = t.querySelector('i');
+        icon.className = i === index && submenus[i].style.display === 'block'
+          ? 'fas fa-chevron-up'
+          : 'fas fa-chevron-down';
+      });
+    });
+  });
+
+  // Search logic
+  const searchInput = document.querySelector('.search-bar input');
+  const contentSections = document.querySelectorAll('.topic-heading, .sub-heading, p');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+
+    contentSections.forEach(section => {
+      const text = section.textContent.toLowerCase();
+      const match = text.includes(query);
+      section.style.display = match || query === '' ? '' : 'none';
+
+      // Show parent headings if any child matches
+      if (section.classList.contains('sub-heading') || section.tagName === 'P') {
+        const topic = section.closest('div.content').querySelector(`#${section.id?.split('-')[0]}`);
+        if (match && topic) topic.style.display = '';
+      }
+    });
+  });
+</script>
+
+  
+</body>
+</html>

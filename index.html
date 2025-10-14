@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alababil - Build Your Shop Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      padding: 12px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #0077cc;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .nav-center,
+    .nav-right {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-center {
+      flex: 2;
+      justify-content: center;
+    }
+
+    .nav-right {
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .navbar li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar li a:hover {
+      color: #0077cc;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #0077cc;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-center,
+      .nav-right {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .nav-center.active,
+      .nav-right.active {
+        display: flex;
+      }
+
+      .navbar li {
+        padding: 8px 0;
+      }
+    }
+
+    /* Banner Section */
+    .banner {
+      background: linear-gradient(to right, #0077cc, #00bfa5);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .banner p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .banner .cta-button {
+      background-color: #ffffff;
+      color: #0077cc;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner .cta-button:hover {
+      background-color: #e0f7fa;
+    }
+
+    /* Intro Section */
+    .intro {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Alababil</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-center" id="nav-center">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Our Policies</a></li>
+      <li><a href="#">FAQs</a></li>
+    </ul>
+    <ul class="nav-right" id="nav-right">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1>Launch Your Shop Website in Minutes</h1>
+    <p>Alababil.com empowers entrepreneurs to create beautiful, functional websites for their businesses — no coding required.</p>
+    <button class="cta-button" onclick="location.href='register.html'">Get Started</button>
+  </div>
+
+  <!-- Intro Section -->
+  <div class="intro">
+    <h2>Why Choose Alababil?</h2>
+    <p>
+      At Alababil, we believe every business deserves a professional online presence. Whether you're selling products, offering services, or building a brand, our platform makes it easy to design and launch your own shop website. With customizable templates, secure hosting, and intuitive tools, you can focus on growing your business while we handle the tech.
+    </p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-center').classList.toggle('active');
+      document.getElementById('nav-right').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

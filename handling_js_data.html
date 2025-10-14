@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Viewer</title>
+</head>
+<body>
+  <h2>Data Output</h2>
+
+  <!-- Embed the data as a JSON string -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const rawData = JSON.parse('{{ data | tojson | safe }}');
+    handleData(rawData);
+  });
+
+    function handleData(data) {
+      if (Array.isArray(data)) {
+        console.log("Array of dictionaries:");
+        data.forEach(item => {
+          console.log(item.name, item.age);
+        });
+      } else if (typeof data === 'object') {
+        console.log("Nested dictionary:");
+        for (const key in data) {
+          console.log(key, data[key]);
+        }
+      } else {
+        console.log("Unknown data format:", data);
+      }
+    }
+
+//    handleData(rawData);
+  </script>
+</body>
+</html>
