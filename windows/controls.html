@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows Controls Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 300px;
+      padding: 6px 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background-color: #fff;
+    }
+
+    textarea {
+      height: 80px;
+      resize: vertical;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #e4e4e4;
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d0e6ff;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    th {
+      background-color: #e4e4e4;
+    }
+
+    tr:hover td {
+      background-color: #f5faff;
+    }
+
+    .progress-container {
+      width: 300px;
+      background-color: #ddd;
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      margin-top: 10px;
+      height: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #0077cc;
+      width: 60%;
+    }
+
+    .listbox {
+      width: 300px;
+      height: 100px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Windows-Style Controls</h1>
+
+  <fieldset>
+    <legend>Form Controls</legend>
+
+    <div class="form-group">
+      <label for="name">Label + Textbox:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+      <label for="country">Combobox (Dropdown):</label>
+      <select id="country">
+        <option value="">Select a country</option>
+        <option value="pk">Pakistan</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Textarea:</label>
+      <textarea id="comments" placeholder="Your comments..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Datepicker:</label>
+      <input type="date" id="dob" />
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Listbox (Multi-select):</label>
+      <select id="skills" multiple class="listbox">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+        <option value="react">React</option>
+        <option value="node">Node.js</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Radio Buttons:</label>
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female">Female</label>
+    </div>
+
+    <div class="form-group">
+      <label>Checkboxes:</label>
+      <input type="checkbox" id="newsletter" />
+      <label for="newsletter">Subscribe to newsletter</label>
+      <br />
+      <input type="checkbox" id="terms" />
+      <label for="terms">Agree to terms</label>
+    </div>
+
+    <div class="form-group">
+      <label>Button:</label>
+      <button onclick="alert('Button clicked!')">Submit</button>
+      <button onclick="getSelectedSkills()">Show Selected Skills</button>
+
+    </div>
+
+    <div class="form-group">
+      <label>Progress Bar:</label>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Data Table</legend>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ali Khan</td>
+          <td>Pakistan</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>United States</td>
+          <td>Inactive</td>
+        </tr>
+        <tr>
+          <td>John Doe</td>
+          <td>United Kingdom</td>
+          <td>Active</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+<script>
+  function getSelectedSkills() {
+    const listbox = document.getElementById("skills");
+    const selected = Array.from(listbox.selectedOptions).map(option => option.value);
+    console.log("Selected skills:", selected);
+    alert("You selected: " + selected.join(", "));
+  }
+</script>
+
+</body>
+</html>

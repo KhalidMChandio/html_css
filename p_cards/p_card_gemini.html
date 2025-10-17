@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display Page</title>
+    <style>
+        /* --- GLOBAL STYLING (Optional Reset) --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- FLEX CONTAINER STYLING --- */
+        .products-flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+            justify-content: space-around; /* Distributes space around the cards */
+            gap: 20px; /* Space between the cards */
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for the main area */
+        }
+
+        /* --- PRODUCT CARD STYLING --- */
+        .product-card {
+            /* Set a flexible basis for the card width */
+            flex: 0 1 300px; /* flex-grow: 0, flex-shrink: 1, basis: 300px */
+            max-width: 300px; /* Ensure cards don't get too wide on large screens */
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensures discount tag stays within bounds */
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- IMAGE & DISCOUNT TAG STYLING --- */
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Fixed height for consistent card size */
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the container without distortion */
+        }
+
+        .discount-tag {
+            position: absolute;
+            top: 10px; /* Position from top-right corner */
+            right: 10px;
+            background-color: #ff4757; /* Prominent color for discount */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 10; /* Ensures it sits above the image */
+            font-size: 0.9em;
+        }
+
+        /* --- DETAILS STYLING --- */
+        .product-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.25em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .price-info {
+            margin-bottom: 10px;
+        }
+
+        .original-price {
+            color: #999;
+            text-decoration: line-through; /* Strikethrough for original price */
+            margin-right: 10px;
+            font-size: 0.95em;
+        }
+
+        .discounted-price {
+            color: #008080; /* Highlighted color for the discounted price */
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .saved-amount {
+            font-size: 1em;
+            color: #38761d; /* Green color for savings */
+            margin-top: 5px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="products-flex-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="a.webp" alt="Image of modern running shoes" class="product-image">
+                <span class="discount-tag">30% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Pro-Fit Running Shoes</h3>
+                <div class="price-info">
+                    <span class="original-price">$79.99</span>
+                    <span class="discounted-price">$55.99</span>
+                </div>
+                <p class="saved-amount">You Save: **$24.00**</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://via.placeholder.com/300x250?text=Leather+Backpack" alt="Image of leather backpack" class="product-image">
+                <span class="discount-tag">15% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Vintage Leather Backpack</h3>
+                <div class="price-info">
+                    <span class="original-price">$120.00</span>
+                    <span class="discounted-price">$102.00</span>
+                </div>
+                <p class="saved-amount">You Save: **$18.00**</p>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://via.placeholder.com/300x250?text=Smartwatch+v3" alt="Image of a sleek smartwatch" class="product-image">
+                <span class="discount-tag">40% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Quantum Smartwatch v3 pro for Business</h3>
+                <div class="price-info">
+                    <span class="original-price">$249.00</span>
+                    <span class="discounted-price">$149.40</span>
+                </div>
+                <p class="saved-amount">You Save: **$99.60**</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

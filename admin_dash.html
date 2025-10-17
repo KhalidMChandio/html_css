@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alababil Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #0077cc;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 12px 0;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .sidebar a:hover {
+      background-color: #005fa3;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    .header {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #0077cc;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #0077cc;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h2>Alababil Admin</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="contact-messages.html">Contact Messages</a>
+    <a href="orders.html">Orders</a>
+    <a href="users.html">Users</a>
+    <a href="settings.html">Site Settings</a>
+    <a href="logout.html">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, Admin</h1>
+    </div>
+
+    <div class="card-grid">
+      <a href="contact-messages.html" class="card-link">
+        <div class="card">
+          <h3>New Messages</h3>
+          <p>12 unread contact messages</p>
+        </div>
+      </a>
+      <a href="orders.html" class="card-link">
+        <div class="card">
+          <h3>Pending Orders</h3>
+          <p>5 orders awaiting confirmation</p>
+        </div>
+      </a>
+      <a href="users.html" class="card-link">
+        <div class="card">
+          <h3>Registered Users</h3>
+          <p>128 active accounts</p>
+        </div>
+      </a>
+      <a href="settings.html" class="card-link">
+        <div class="card">
+          <h3>System Status</h3>
+          <p>All services running smoothly</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

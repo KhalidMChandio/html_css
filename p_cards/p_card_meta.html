@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Cards</title>
+  <style>
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: calc(33.33% - 20px);
+      background-color: #f7f7f7;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .discount-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff0000;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price-container {
+      margin-bottom: 10px;
+    }
+
+    .actual-price {
+      text-decoration: line-through;
+      color: #666;
+      margin-right: 10px;
+    }
+
+    .discounted-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .saved-amount {
+      font-size: 14px;
+      color: #008000;
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+      <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Product 1">
+        <span class="discount-tag">-20%</span>
+      </div>
+      <h3 class="product-name">Product 1</h3>
+      <div class="price-container">
+        <span class="actual-price">$100</span>
+        <span class="discounted-price">$80</span>
+      </div>
+      <span class="saved-amount">You saved $20</span>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="product-card">
+      <div class="image-container">
+        <img src="a.webp" alt="Product 2">
+        <span class="discount-tag">-30%</span>
+      </div>
+      <h3 class="product-name">Product 2</h3>
+      <div class="price-container">
+        <span class="actual-price">$200</span>
+        <span class="discounted-price">$140</span>
+      </div>
+      <span class="saved-amount">You saved $60</span>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="product-card">
+      <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Product 3">
+        <span class="discount-tag">-15%</span>
+      </div>
+      <h3 class="product-name">Product 3</h3>
+      <div class="price-container">
+        <span class="actual-price">$150</span>
+        <span class="discounted-price">$127.50</span>
+      </div>
+      <span class="saved-amount">You saved $22.50</span>
+    </div>
+  </div>
+</body>
+</html>

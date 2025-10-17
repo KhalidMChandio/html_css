@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page - Business & Products</title>
+    <style>
+        /* --- GLOBAL STYLING & RESET --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        /* ================================================= */
+        /* --- 1. HERO BANNER STYLING --- */
+        /* ================================================= */
+        .hero-banner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .banner-content {
+            max-width: 800px;
+        }
+
+        .business-name {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .business-description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .get-started-button {
+            background-color: #ffc107; /* Eye-catching button color */
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .get-started-button:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        /* ================================================= */
+        /* --- 2. PRODUCT CARDS STYLING --- */
+        /* ================================================= */
+
+        .products-heading {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: #333;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        /* FLEX CONTAINER STYLING */
+        .products-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Use center instead of space-around for slightly tighter grouping */
+            gap: 20px;
+            padding: 0 20px 40px;
+        }
+
+        /* PRODUCT CARD STYLING */
+        .product-card {
+            flex: 0 1 300px; /* flex-grow: 0, flex-shrink: 1, basis: 300px */
+            max-width: 300px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* IMAGE & DISCOUNT TAG STYLING */
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .discount-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 10;
+            font-size: 0.9em;
+        }
+
+        /* DETAILS STYLING */
+        .product-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.25em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .price-info {
+            margin-bottom: 10px;
+        }
+
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 10px;
+            font-size: 0.95em;
+        }
+
+        .discounted-price {
+            color: #008080;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .saved-amount {
+            font-size: 1em;
+            color: #38761d;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* ================================================= */
+        /* --- 3. RESPONSIVE ADJUSTMENTS (Combined) --- */
+        /* ================================================= */
+
+        @media (max-width: 768px) {
+            /* Banner Adjustments */
+            .hero-banner {
+                height: 350px;
+            }
+            .business-name {
+                font-size: 2.5em;
+            }
+            .business-description {
+                font-size: 1em;
+            }
+            .get-started-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Banner Adjustments */
+            .hero-banner {
+                height: 300px;
+                padding: 15px;
+            }
+            .business-name {
+                font-size: 2em;
+            }
+            .business-description {
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+            .get-started-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            /* Product Card Adjustments */
+            .products-heading {
+                font-size: 1.5em;
+                padding: 20px 10px 10px;
+            }
+            .product-card {
+                flex: 0 1 100%; /* Full width for very small screens */
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-banner">
+        <div class="banner-content">
+            <h1 class="business-name">Innovate Solutions Co.</h1>
+            <p class="business-description">
+                We provide innovative solutions to empower your digital journey.
+                Discover seamless experiences and unparalleled support tailored for you.
+            </p>
+            <button class="get-started-button">Get Started</button>
+        </div>
+    </div>
+
+    <h2 class="products-heading">Featured Products on Sale!</h2>
+
+    <div class="products-flex-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://via.placeholder.com/300x250?text=Running+Shoes" alt="Image of modern running shoes" class="product-image">
+                <span class="discount-tag">30% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Pro-Fit Running Shoes</h3>
+                <div class="price-info">
+                    <span class="original-price">$79.99</span>
+                    <span class="discounted-price">$55.99</span>
+                </div>
+                <p class="saved-amount">You Save: **$24.00**</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://via.placeholder.com/300x250?text=Leather+Backpack" alt="Image of leather backpack" class="product-image">
+                <span class="discount-tag">15% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Vintage Leather Backpack</h3>
+                <div class="price-info">
+                    <span class="original-price">$120.00</span>
+                    <span class="discounted-price">$102.00</span>
+                </div>
+                <p class="saved-amount">You Save: **$18.00**</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://via.placeholder.com/300x250?text=Smartwatch+v3" alt="Image of a sleek smartwatch" class="product-image">
+                <span class="discount-tag">40% OFF</span>
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Quantum Smartwatch v3</h3>
+                <div class="price-info">
+                    <span class="original-price">$249.00</span>
+                    <span class="discounted-price">$149.40</span>
+                </div>
+                <p class="saved-amount">You Save: **$99.60**</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
